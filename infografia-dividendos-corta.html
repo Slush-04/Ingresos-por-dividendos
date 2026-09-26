@@ -241,10 +241,6 @@ input[type=number]{width:100%;padding:11px;border-radius:10px;border:2px solid #
       <div class="ley"><b>Art. 77 LISR</b>Crea UFIN y CUFIN. Registro de utilidades que ya pagaron impuesto. Repartir de CUFIN = sin ISR adicional.</div>
       <div class="ley"><b>Art. 140 + 152 LISR</b>La PF acumula el dividendo piramidado ($142,860), aplica tarifa anual y acredita los $42,858. El 10% retenido es definitivo.</div>
     </div>
-    <div class="btnrow center">
-      <button class="btn v" data-open="m5">Abrir calculadora de la declaración anual</button>
-    </div>
-
     <div class="cinta">1.4286 Piramidación &nbsp;·&nbsp; 30% Acreditamiento &nbsp;·&nbsp; 10% Retención definitiva</div>
     <footer>Declaración anual ejemplo: $142,860 + $300,000 salarios = $442,860 base · ISR ≈ $75,200 − $42,858 = <b>$32,342 neto</b></footer>
 
@@ -317,24 +313,6 @@ input[type=number]{width:100%;padding:11px;border-radius:10px;border:2px solid #
   </div>
 </div></div>
 
-<!-- MODAL 5: declaración anual -->
-<div class="overlay" id="m5"><div class="modal v" role="dialog" aria-modal="true">
-  <button class="x" data-close>✕</button>
-  <div class="mhead v"><h3>Declaración anual del accionista</h3><p>Acreditamiento Art. 140 + Tarifa Art. 152</p></div>
-  <div class="mbody">
-    <label>Otros ingresos del socio (ej. salarios)</label>
-    <input type="number" id="otros" value="300000" min="0" step="1000">
-    <div class="kv"><span>Dividendo piramidado</span><b>$142,860.00</b></div>
-    <div class="kv"><span>(+) Otros ingresos</span><b id="vOtros">$300,000.00</b></div>
-    <div class="kv total"><span>(=) Base gravable anual</span><b id="vBase">$442,860.00</b></div>
-    <div class="kv"><span>(×) Tarifa Art. 152 (aprox.)</span><b id="vIsr">$75,200.00</b></div>
-    <div class="kv ok"><span>(−) Acreditamiento 30%</span><b>−$42,858.00</b></div>
-    <div class="kv total"><span>(=) Impuesto neto del socio</span><b id="vNeto">$32,342.00</b></div>
-    <p class="note">El 10% retenido ($10,000) fue pago definitivo y no se resta en la tarifa, pero el socio recupera el 30% vía acreditamiento. Cifras aproximadas con fines didácticos.</p>
-    <div class="btnrow"><button class="btn v" data-close>Volver a la infografía</button></div>
-  </div>
-</div></div>
-
 <script>
 const $=s=>document.querySelector(s);
 document.querySelectorAll('[data-open]').forEach(el=>el.addEventListener('click',()=>{
@@ -358,17 +336,7 @@ if(simDiv)simDiv.addEventListener('input',()=>{
   $('#simOut').textContent=fmt(pir);
   $('#simIsr').textContent=fmt(pir*0.30);
 });
-const otros=$('#otros');
-function tarifaAprox(base){if(base<=0)return 0;return Math.round(base*0.21-17800);}
-function upd(){
-  const o=parseFloat(otros.value)||0, base=o+142860,
-        isr=Math.max(0,tarifaAprox(base)), neto=Math.max(0,isr-42858);
-  $('#vOtros').textContent=fmt(o);
-  $('#vBase').textContent=fmt(base);
-  $('#vIsr').textContent=fmt(isr);
-  $('#vNeto').textContent=fmt(neto);
-}
-if(otros)otros.addEventListener('input',upd);
+/* Calculadora anual retirada: el resumen queda fijo en el pie de la infografía. */
 </script>
 </body>
 </html>
