@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infografía LISR</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --violet:#4A0E4E; --violet2:#6E1A73;
+  --green:#00C897; --green-d:#008F6B; --green-bg:#DFFBF1;
+  --orange:#FF763B; --orange-d:#C84E1D; --orange-bg:#FFEDDF;
+  --yellow:#FFD32A; --bg:#F3F8FE; --card:#fff; --ink:#2E2136; --muted:#6C6A86;
+  --r:20px; --sh:0 14px 34px rgba(74,14,78,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--ink);display:flex;justify-content:center;padding:24px 14px}
+h1,h2,h3{font-family:'Poppins',sans-serif}
+.sheet{width:100%;max-width:860px;background:var(--card);border-radius:28px;overflow:hidden;box-shadow:var(--sh);border:1px solid #EADFF5}
+/* HEADER */
+.hero{background:linear-gradient(135deg,var(--violet),var(--violet2) 60%,#2B0A3A);color:#fff;padding:30px 28px 24px;text-align:center;position:relative}
+.badge{display:inline-block;font-family:'Poppins';font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,211,42,.16);border:1.5px solid var(--yellow);color:var(--yellow);padding:7px 16px;border-radius:100px;font-weight:800}
+.hero h1{font-size:clamp(1.6rem,4.5vw,2.5rem);line-height:1.05;margin:14px 0 6px;font-weight:900}
+.hero h1 span{color:var(--yellow)}
+.hero p{opacity:.88;font-weight:700;font-size:.95rem;max-width:620px;margin:0 auto}
+.pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.pill{background:#fff;color:var(--violet);border-radius:100px;padding:8px 16px;font-family:'Poppins';font-weight:800;font-size:.82rem;display:flex;align-items:center;gap:8px}
+.pill i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;font-style:normal;font-size:.85rem}
+.pill:nth-child(1) i{background:var(--violet)} .pill:nth-child(2) i{background:var(--green-d)} .pill:nth-child(3) i{background:var(--orange)}
+.body{padding:24px 24px 20px;display:grid;gap:18px}
+/* IMAGE SLOT */
+.img-slot{border:2.5px dashed #B9A6CE;border-radius:16px;background:linear-gradient(180deg,#FBF7FF,#F3F8FE);padding:14px;text-align:center;color:var(--violet)}
+.img-slot .tag{display:inline-block;font-family:'Poppins';font-weight:800;font-size:.72rem;background:var(--violet);color:var(--yellow);padding:4px 12px;border-radius:100px;margin-bottom:8px}
+.img-slot p{font-size:.82rem;font-weight:800;color:var(--muted)}
+.img-slot small{font-size:.75rem;color:#8E8AA8;font-weight:700}
+.img-slot .frame{margin:10px auto 0;border-radius:12px;background:#fff;border:1px solid #E5D9F5;display:grid;place-items:center;color:#B9A6CE;font-weight:800;overflow:hidden}
+.img-real{display:block;width:100%;border-radius:14px;box-shadow:var(--sh);border:1px solid #EADFF5;background:#fff}
+.img-real img{display:block;width:100%;height:auto;border-radius:14px}
+.img-real.sm img{max-height:240px;object-fit:contain;background:#fff;padding:8px}
+/* CARDS */
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:680px){.grid3{grid-template-columns:1fr}.body{padding:18px 14px}}
+.concept{border-radius:var(--r);padding:16px;border-top:6px solid;background:#fff;box-shadow:var(--sh);border-left:1px solid #EEE;border-right:1px solid #EEE;border-bottom:1px solid #EEE}
+.concept.c1{border-color:var(--violet)} .concept.c2{border-color:var(--green)} .concept.c3{border-color:var(--yellow)}
+.concept h3{font-size:1rem;margin:8px 0 6px}
+.concept p{font-size:.85rem;color:var(--muted);font-weight:700;line-height:1.45}
+.concept .art{display:inline-block;font-size:.72rem;font-family:'Poppins';font-weight:800;padding:4px 10px;border-radius:100px;margin-bottom:2px}
+.c1 .art{background:#EEDDF3;color:var(--violet)} .c2 .art{background:var(--green-bg);color:var(--green-d)} .c3 .art{background:#FFF3B0;color:#7A5F00}
+.formula{background:linear-gradient(135deg,var(--violet),var(--violet2));color:#fff;border-radius:14px;padding:12px;text-align:center;font-family:'Poppins';font-weight:800;font-size:.92rem;border:2px solid var(--yellow)}
+.formula b{color:var(--yellow)}
+.icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#fff}
+/* CASO */
+.caso{background:linear-gradient(180deg,#FFFDF2,#FFF6C4);border:2px solid #E8C400;border-radius:var(--r);padding:18px}
+.caso-head{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center}
+@media(max-width:680px){.caso-head{grid-template-columns:1fr}}
+.caso h2{font-size:1.25rem}
+.caso .monto{font-family:'Poppins';font-weight:900;font-size:2rem;color:var(--violet)}
+.datos{font-size:.85rem;font-weight:800;background:#fff;border-radius:12px;padding:10px 14px;border:1px solid #E8C400;margin-top:10px}
+.pasos{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px}
+@media(max-width:680px){.pasos{grid-template-columns:1fr}}
+.paso{background:#fff;border-radius:14px;padding:12px;border:2px solid #EADFF5;text-align:center}
+.paso .n{width:28px;height:28px;border-radius:50%;background:var(--violet);color:var(--yellow);font-family:'Poppins';font-weight:900;display:grid;place-items:center;margin:0 auto 8px}
+.paso b{display:block;font-family:'Poppins';font-size:.9rem}
+.paso span{font-size:.82rem;font-weight:800;color:var(--muted)}
+.paso.res{border-color:var(--violet);background:var(--violet);color:#fff}
+.paso.res span{color:var(--yellow)}
+/* COMPARATIVA */
+.comp h2{font-size:1.25rem;margin-bottom:4px}
+.comp p{font-size:.85rem;color:var(--muted);font-weight:700;margin-bottom:12px}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.vs{grid-template-columns:1fr}}
+.col{border-radius:16px;padding:16px;border:3px solid}
+.col.g{background:var(--green-bg);border-color:var(--green)}
+.col.o{background:var(--orange-bg);border-color:var(--orange)}
+.col h3{font-size:1rem;display:flex;align-items:center;gap:8px}
+.col ul{list-style:none;margin-top:10px;display:grid;gap:8px;font-size:.85rem;font-weight:800}
+.col li{background:#fff;border-radius:10px;padding:8px 10px;display:flex;justify-content:space-between;gap:8px;border:1px solid rgba(0,0,0,.07)}
+.col li b{white-space:nowrap}
+/* LEYES */
+.leyes{background:#24102B;color:#fff;border-radius:var(--r);padding:18px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+@media(max-width:680px){.leyes{grid-template-columns:1fr}}
+.ley{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:12px;font-size:.82rem;font-weight:700}
+.ley b{font-family:'Poppins';color:var(--yellow);display:block;margin-bottom:4px;font-size:.88rem}
+.cinta{background:var(--yellow);border-radius:14px;padding:12px;text-align:center;font-family:'Poppins';font-weight:900;color:var(--violet);font-size:.95rem}
+footer{text-align:center;font-size:.75rem;color:var(--muted);font-weight:700;padding:4px 10px 6px}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="hero">
+    <div class="badge">Capítulo VIII · Título IV LISR · Art. 10 — 77 — 140</div>
+    <h1>DIVIDENDOS <span>De la empresa al accionista</span></h1>
+    <p>Régimen fiscal de ingresos por dividendos y ganancias distribuidas. Caso hipotético con fines académicos.</p>
+    <div class="pills">
+      <div class="pill"><i>×</i> 1.4286 Piramidación</div>
+      <div class="pill"><i>%</i> 30% Acreditable</div>
+      <div class="pill"><i>R</i> 10% Retención definitiva</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- IMG 01 -->
+    <figure class="img-real">
+      <img src="sofia-cheque.png" alt="Sofía Ramírez recibiendo cheque de dividendos por $100,000 MXN frente a la empresa">
+    </figure>
+
+    <!-- CONCEPTOS -->
+    <div>
+      <div class="grid3">
+        <div class="concept c1">
+          <div class="icon" style="background:#4A0E4E">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFD32A" stroke-width="2.4" stroke-linecap="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg>
+          </div>
+          <span class="art">Art. 77 · UFIN</span>
+          <h3>Utilidad Fiscal Neta</h3>
+          <p>Ganancia del año que <b>ya pagó el 30%</b> de ISR.<br>Resultado Fiscal − ISR − No deducibles − PTU.</p>
+        </div>
+        <div class="concept c2">
+          <div class="icon" style="background:#00C897">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M4 9V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/><rect x="3" y="9" width="18" height="11" rx="2"/><circle cx="12" cy="14.5" r="2.2"/></svg>
+          </div>
+          <span class="art">Art. 77 · CUFIN</span>
+          <h3>Cuenta acumulada</h3>
+          <p>“Bolsa” de UFINes pasadas. Si el dividendo sale de aquí, <b>la empresa paga $0 extra</b> al repartir.</p>
+        </div>
+        <div class="concept c3">
+          <div class="icon" style="background:#EAB800">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A0E4E" stroke-width="2.4" stroke-linecap="round"><path d="M12 3 3 20h18L12 3z"/><path d="M12 10v4M12 17v.5"/></svg>
+          </div>
+          <span class="art">Art. 10 y 140 · Factor</span>
+          <h3>Piramidación 1.4286</h3>
+          <p>Reconstruye la utilidad bruta:<br><b>1 ÷ (1 − 0.30) = 1.4286</b></p>
+        </div>
+      </div>
+      <div class="formula" style="margin-top:12px">Dividendo neto × <b>1.4286</b> = Ingreso acumulable del socio</div>
+    </div>
+
+    <!-- CASO -->
+    <div class="caso">
+      <div class="caso-head">
+        <div>
+          <h2>Caso hipotético</h2>
+          <div class="monto">$100,000 MXN</div>
+          <div class="datos">
+            Socia: <b>Sofía Ramírez</b> (persona física)<br>
+            Emisora: <b>Innovación Digital S.A. de C.V.</b> (persona moral)<br>
+            Dividendo en efectivo distribuido en el ejercicio.
+          </div>
+        </div>
+        <figure class="img-real">
+          <img src="piramide.png" alt="Máquina pirámide cartoon que transforma $100,000 en $142,860 con factor 1.4286">
+        </figure>
+      </div>
+      <div class="pasos">
+        <div class="paso"><div class="n">1</div><b>$100,000 × 1.4286</b><span>= <b>$142,860</b> ingreso acumulable (Art. 140)</span></div>
+        <div class="paso"><div class="n">2</div><b>$142,860 × 30%</b><span>= <b>$42,858</b> ISR corporativo acreditable</span></div>
+        <div class="paso res"><div class="n" style="background:#FFD32A;color:#4A0E4E">3</div><b>$100,000 × 10%</b><span>= <b>$10,000</b> retención definitiva · Neto socio: $90,000</span></div>
+      </div>
+    </div>
+
+    <!-- COMPARATIVA -->
+    <div class="comp">
+      <h2>El origen lo define todo: ¿de CUFIN o no?</h2>
+      <p>Mismo cheque, mismo neto para Sofía ($90,000). Lo que cambia es lo que paga la empresa.</p>
+      <div class="vs">
+        <div class="col g">
+          <h3><span style="width:14px;height:14px;border-radius:50%;background:#00C897;display:inline-block"></span> Ruta CUFIN · Utilidad limpia</h3>
+          <!-- IMG-03A -->
+          <figure class="img-real sm" style="margin-top:10px">
+            <img src="cufin.png" alt="Bóveda verde CUFIN con monedas y bandera ISR $0">
+          </figure>
+          <ul>
+            <li>ISR empresa (Art. 10) <b>$0.00</b></li>
+            <li>Retención socio 10% <b>$10,000</b></li>
+            <li>Acumulable socio <b>$142,860</b></li>
+            <li>Acreditable 30% <b>$42,858</b></li>
+          </ul>
+        </div>
+        <div class="col o">
+          <h3><span style="width:14px;height:14px;border-radius:50%;background:#FF763B;display:inline-block"></span> Ruta fuera de CUFIN</h3>
+          <figure class="img-real sm" style="margin-top:10px">
+            <img src="no-cufin.png" alt="Cofre naranja NO CUFIN con etiqueta 30 por ciento ISR">
+          </figure>
+          <ul>
+            <li>ISR empresa (Art. 10) <b>$42,858</b></li>
+            <li>Retención socio 10% <b>$10,000</b></li>
+            <li>Acumulable socio <b>$142,860</b></li>
+            <li>Total impuestos operación <b>$52,858</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEYES + CIERRE -->
+    <div class="leyes">
+      <div class="ley"><b>Art. 10 LISR</b>La PM paga 30% sobre dividendos no provenientes de CUFIN (piramidando la base ×1.4286).</div>
+      <div class="ley"><b>Art. 77 LISR</b>Crea UFIN y CUFIN. Registro de utilidades que ya pagaron impuesto. Repartir de CUFIN = sin ISR adicional.</div>
+      <div class="ley"><b>Art. 140 + 152 LISR</b>La PF acumula el dividendo piramidado ($142,860), aplica tarifa anual y acredita los $42,858. El 10% retenido es definitivo.</div>
+    </div>
+
+    <div class="cinta">1.4286 Piramidación &nbsp;·&nbsp; 30% Acreditamiento &nbsp;·&nbsp; 10% Retención definitiva</div>
+    <footer>Declaración anual ejemplo: $142,860 + $300,000 salarios = $442,860 base · ISR ≈ $75,200 − $42,858 = <b>$32,342 neto</b></footer>
+
+  </div>
+</div>
+</body>
+</html>
